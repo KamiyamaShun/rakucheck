@@ -15,6 +15,7 @@ class EmployeesController < ApplicationController
     if employee.save
       redirect_to root_path
     else
+      @employee = Employee.new
       render :new
     end
   end
