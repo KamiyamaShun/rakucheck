@@ -5,4 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   
   validates :shop_name, presence: true
+  has_many :employees
+  has_many :conditions
 end
