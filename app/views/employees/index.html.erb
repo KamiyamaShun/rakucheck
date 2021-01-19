@@ -1,8 +1,23 @@
+<h1>RAKUCHECK</h1>
+
 <% if user_signed_in?%>
-  <h2>ログインしています</h2>
   <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
 <% else %>
-  <h2>ログインしていません</h2>
   <%= link_to "新規登録", new_user_registration_path %>
   <%= link_to "ログイン", new_user_session_path %>
 <% end %>
+<div>
+  <%= link_to "健康チェックを始める", '#' %>
+</div>
+<div>
+  <%= link_to "従業員を登録する",  new_employee_path %>
+</div>
+
+<h2>従業員リスト</h2>
+<% @employees.each do |employee| %>
+  <div>
+    <%= employee.employee_number %>.<%= employee.name %>
+    <%= link_to '編集',   edit_employee_path(employee.id )%>
+    <%= link_to '削除',  employee_path(employee.id), method: :delete %>
+  </div>
+<%end%>

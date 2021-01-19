@@ -19,11 +19,11 @@
 | --------------------- | ---------- | ------------------------- |
 | name                  | string     | null: false               |
 | employee_number       | integer    | null: false, unique: true |
-| shop                  | references | foreign_key: true         |
+| user                  | references | foreign_key: true         |
 
 ### Association
 
-- belongs_to :shop
+- belongs_to :user
 - has_many :conditions
 
 ## conditions テーブル
@@ -34,10 +34,10 @@
 | fingers_status            | string     | null: false       | 
 | gastrointestinal_symptoms | string     | null: false       |
 | other_symptoms            | text       | null: false       |
-| shop                      | references | foreign_key: true |
+| user                      | references | foreign_key: true |
 | employee                  | references | foreign_key: true |
 
 ### Association
 
-- belongs_to :shop
+- belongs_to :user
 - belongs_to :employee
