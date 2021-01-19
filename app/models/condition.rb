@@ -8,4 +8,8 @@ class Condition < ApplicationRecord
 
   belongs_to :user
   belongs_to :employee
+
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to :fingers_statu
+  belongs_to :gastrointestinal_symptom
 end
