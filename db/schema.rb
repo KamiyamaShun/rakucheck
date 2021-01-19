@@ -14,7 +14,7 @@ ActiveRecord::Schema.define(version: 2021_01_19_020956) do
 
   create_table "employees", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
-    t.integer "employee_number", null: false
+    t.string "employee_number", null: false
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

@@ -18,7 +18,7 @@
 | Column                | Type       | Options                   |
 | --------------------- | ---------- | ------------------------- |
 | name                  | string     | null: false               |
-| employee_number       | integer    | null: false, unique: true |
+| employee_number       | string     | null: false, unique: true |
 | user                  | references | foreign_key: true         |
 
 ### Association
