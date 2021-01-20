@@ -1,5 +1,5 @@
 class Condition < ApplicationRecord
-  validates :temperature, presence: true, format: {with: /\A[0-9]{2}[.][0-9]{1}+\z/, message: 'を半角数字で入力してください'}
+  validates :temperature, presence: true, format: {with: /\A[0-9]{2}[.][0-9]{1}+\z/, message: 'を小数点を入れて半角数字で入力してください'}
 
   with_options numericality: { other_than: 1, message: 'を選んでください'} do
     validates :fingers_status_id
