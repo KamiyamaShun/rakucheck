@@ -3,7 +3,7 @@ class Condition < ApplicationRecord
 
   with_options numericality: { other_than: 1, message: 'を選んでください'} do
     validates :fingers_status_id
-    validates :gastrointestinal_symptoms_id
+    validates :gastrointestinal_symptom_id
   end
 
   belongs_to :user

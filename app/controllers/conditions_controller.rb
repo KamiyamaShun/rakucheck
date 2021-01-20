@@ -1,4 +1,9 @@
 class ConditionsController < ApplicationController
+
+  def index
+    @conditions = Condition.includes(:user, :employee).order('created_at DESC')
+  end
+
   def new
     @condition = Condition.new
   end
@@ -16,6 +21,6 @@ class ConditionsController < ApplicationController
     private
     
     def condition_params 
-      params.require(:condition).permit(:temperature, :fingers_status_id, :gastrointestinal_symptoms_id, :other_symptoms).merge(user_id: current_user.id, employee_id: params[:employee_id] )
+      params.require(:condition).permit(:temperature, :fingers_status_id, :gastrointestinal_symptom_id, :other_symptoms).merge(user_id: current_user.id, employee_id: params[:employee_id] )
     end
 end
