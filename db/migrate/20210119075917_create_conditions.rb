@@ -1,7 +1,7 @@
 class CreateConditions < ActiveRecord::Migration[6.0]
   def change
     create_table :conditions do |t|
-      t.integer  :temperature, null: false
+      t.float :temperature, null: false, precision: 3, scale: 1
       t.integer :fingers_status_id, null: false
       t.integer :gastrointestinal_symptoms_id, null: false
       t.text :other_symptoms

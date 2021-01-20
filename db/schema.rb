@@ -13,7 +13,7 @@
 ActiveRecord::Schema.define(version: 2021_01_19_075917) do
 
   create_table "conditions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "temperature", null: false
+    t.float "temperature", null: false
     t.integer "fingers_status_id", null: false
     t.integer "gastrointestinal_symptoms_id", null: false
     t.text "other_symptoms"

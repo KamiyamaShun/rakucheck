@@ -1,11 +1,15 @@
-<%= form_with model: @employee, local: true do |f| %>
+<%= form_with model: @condition, url: employee_conditions_path, local: true do |f| %>
   <div class="field">
     <%= f.label :temperature %><br />
     <%= f.text_field :temperature %>
   </div>
   <div class="field">
-    <%= f.label :employee_number %><br />
-    <%= f.text_field :employee_number %>
+    <%= f.label :fingers_status_id %><br />
+    <%= f.collection_select(:fingers_status_id, FingersStatus.all, :id, :name, {}) %>
   </div>
-  <%= f.submit "登録する" %>
+  <div class="field">
+    <%= f.label :gastrointestinal_symptoms_id %><br />
+    <%= f.collection_select(:gastrointestinal_symptoms_id, GastrointestinalSymptom.all, :id, :name, {}) %>
+  </div>
+  <%= f.submit "記録する" %>
 <%end%>
