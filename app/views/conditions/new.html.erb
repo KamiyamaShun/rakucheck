@@ -11,5 +11,9 @@
     <%= f.label :gastrointestinal_symptoms_id %><br />
     <%= f.collection_select(:gastrointestinal_symptoms_id, GastrointestinalSymptom.all, :id, :name, {}) %>
   </div>
+  <div class="field">
+    <%= f.label :other_symptoms %><br />
+    <%= f.text_area :other_symptoms placeholder: "他に症状があれば記入してください。" %>
+  </div>
   <%= f.submit "記録する" %>
 <%end%>
