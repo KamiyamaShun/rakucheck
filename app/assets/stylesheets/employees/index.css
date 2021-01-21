@@ -1,0 +1,25 @@
+main{
+  background-color: #f8f8f8;
+}
+
+a{
+  text-decoration: none;
+}
+
+.report-content{
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.report-btn{
+  background-color: tomato;
+  margin: 30px auto;
+  padding: 20px 40px;
+  border-radius: 20px;
+  color: black;
+  font-size: 30px;
+  cursor: pointer;
+  display: inline-block;
+}

@@ -1,28 +1,32 @@
 <%= render "shared/header" %>
 
-<div>
-  <%= link_to "従業員を登録する",  new_employee_path %>
-</div>
-<div>
-  <%= link_to "健康状態を確認する", conditions_path %>
-</div>
-
-
-<h2>健康チェック</h2>
-<% @employees.each do |employee| %>
-  <div>
-    <%= employee.employee_number %>.<%= employee.name %>
-    <%= link_to "健康状態を記録する", new_employee_condition_path(employee.id) %>
+<main>
+<div class="report-content">
+  <div class="report-btn">
+    <%= link_to "健康状態を確認する", conditions_path %>
   </div>
-<%end%>
+  <h2 class="title">健康チェック</h2>
+  <% @employees.each do |employee| %>
+    <div>
+      <%= employee.employee_number %>.<%= employee.name %>
+      <%= link_to "健康状態を記録する", new_employee_condition_path(employee.id) %>
+    </div>
+  <%end%>
+</div>
 
-<h2>従業員リスト</h2>
-<% @employees.each do |employee| %>
-  <div>
-    <%= employee.employee_number %>.<%= employee.name %>
-    <%= link_to '編集',   edit_employee_path(employee.id )%>
-    <%= link_to '削除',  employee_path(employee.id), method: :delete %>
+<div class="submit-content">
+  <h2 class="title">従業員リスト</h2>
+  <div class="submit-btn">
+    <%= link_to "従業員を登録する",  new_employee_path %>
   </div>
-<%end%>
+  <% @employees.each do |employee| %>
+    <div>
+      <%= employee.employee_number %>.<%= employee.name %>
+      <%= link_to '編集',   edit_employee_path(employee.id )%>
+      <%= link_to '削除',  employee_path(employee.id), method: :delete %>
+    </div>
+  <%end%>
+</div>
+</main>
 
 <%= render "shared/footer" %>
