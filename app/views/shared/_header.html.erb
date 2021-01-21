@@ -1,10 +1,10 @@
 <header class='page-header'>
   <div class='nav'>
-  <%= link_to "RAKUCHECK", root_path%>
+  <%= link_to "RAKUCHECK", root_path, class:"rakucheck-title" %>
     <ul class='lists'>
       <% if user_signed_in?%>
-      <li><%= current_user.shop_name%></li>
-      <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %><li>
+      <li><%= link_to current_user.shop_name, '#', class:'shop-name'%></li>
+      <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:'log-out' %><li>
       <% end %>
     </ul>
   </div>
