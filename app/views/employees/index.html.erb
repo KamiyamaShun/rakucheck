@@ -6,12 +6,22 @@
   <%= link_to "新規登録", new_user_registration_path %>
   <%= link_to "ログイン", new_user_session_path %>
 <% end %>
-<div>
-  <%= link_to "健康チェックを始める", '#' %>
-</div>
+
 <div>
   <%= link_to "従業員を登録する",  new_employee_path %>
 </div>
+<div>
+  <%= link_to "健康状態を確認する", conditions_path %>
+</div>
+
+
+<h2>健康チェック</h2>
+<% @employees.each do |employee| %>
+  <div>
+    <%= employee.employee_number %>.<%= employee.name %>
+    <%= link_to "健康状態を記録する", new_employee_condition_path(employee.id) %>
+  </div>
+<%end%>
 
 <h2>従業員リスト</h2>
 <% @employees.each do |employee| %>

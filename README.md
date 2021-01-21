@@ -28,14 +28,14 @@
 
 ## conditions テーブル
 
-| Column                    | Type       | Options           |
-| ------------------------- | ---------- | ----------------- |
-| temperature               | integer    | null: false       |
-| fingers_status            | string     | null: false       | 
-| gastrointestinal_symptoms | string     | null: false       |
-| other_symptoms            | text       | null: false       |
-| user                      | references | foreign_key: true |
-| employee                  | references | foreign_key: true |
+| Column                       | Type       | Options                             |
+| ---------------------------- | ---------- | ----------------------------------- |
+| temperature                  | float      | null: false, precision: 3, scale: 1 |
+| fingers_status_id            | integer    | null: false                         | 
+| gastrointestinal_symptom_id  | integer    | null: false                         |
+| other_symptoms               | text       | null: false                         |
+| user                         | references | foreign_key: true                   |
+| employee                     | references | foreign_key: true                   |
 
 ### Association
 

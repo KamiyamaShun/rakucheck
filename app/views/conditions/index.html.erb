@@ -1,0 +1,26 @@
+<h2>従業員健康状態</h2>
+
+<table>
+  <tr>
+    <th>名前</th>
+    <th>日付</th>
+    <th>体温</th>
+    <th>手指状態</th>
+    <th>消化器症状</th>
+    <th>その他症状</th>
+  </tr>
+  <% @conditions.each do |condition| %>
+    <tr>
+      <td><%= condition.employee.name%></td>
+      <td><%= l condition.created_at, format: :short %></td>
+      <td><%= condition.temperature%></td>
+      <td><%= condition.fingers_status.name%></td>
+      <td><%= condition.gastrointestinal_symptom.name%></td>
+      <td><%= condition.other_symptoms%></td>
+    </tr>
+  <% end %>
+</table>
+
+
+  
+
