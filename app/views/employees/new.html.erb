@@ -1,1 +1,14 @@
-  <%= render partial: "shared/form" ,locals: {employee: @employee}%>
+<%= form_with model: @employee, local: true do |f| %>
+
+<%= render 'shared/error_messages', model: f.object %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :employee_number %><br />
+    <%= f.text_field :employee_number %>
+  </div>
+  <%= f.submit "登録する" %>
+<%end%>
