@@ -1,8 +1,9 @@
-<header class='top-page-header'>
+<header class='page-header'>
   <div class='nav'>
   <%= link_to "RAKUCHECK", root_path%>
-    <ul class='lists-right'>
+    <ul class='lists'>
       <% if user_signed_in?%>
+      <li><%= current_user.shop_name%></li>
       <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %><li>
       <% end %>
     </ul>
