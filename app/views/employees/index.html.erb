@@ -2,8 +2,8 @@
 
 <main>
 <div class="report-content">
-  <div class="report-btn">
-    <%= link_to "健康状態を確認する", conditions_path %>
+  <div class="report">
+    <%= link_to "健康状態を確認する", conditions_path, class:"report-btn" %>
   </div>
   <h2 class="title">健康チェック</h2>
   <% @employees.each do |employee| %>

@@ -13,13 +13,21 @@ a{
   align-items: center;
 }
 
+.report{
+  margin: 100px auto;
+}
+
 .report-btn{
   background-color: tomato;
-  margin: 30px auto;
   padding: 20px 40px;
   border-radius: 20px;
   color: black;
-  font-size: 30px;
+  font-size: 25px;
   cursor: pointer;
-  display: inline-block;
+}
+
+.title{
+  font-size: 25px;
+  font-weight: bold;
+  margin: 50px auto;
 }
