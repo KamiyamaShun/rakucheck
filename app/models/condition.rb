@@ -12,4 +12,12 @@ class Condition < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :fingers_status
   belongs_to :gastrointestinal_symptom
+
+  def self.search(search)
+    if search != ""
+      Condition.joins(:employee).where('employees.name LIKE(?)', "%#{search}%")
+    else
+      Condition.includes(:user, :employee).order('created_at DESC')
+    end
+  end
 end

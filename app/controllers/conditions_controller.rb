@@ -18,6 +18,10 @@ class ConditionsController < ApplicationController
     end
   end
 
+  def search
+    @conditions = Condition.search(params[:keyword])
+  end
+
     private
     
     def condition_params 
