@@ -1,26 +1,38 @@
-<h2>Log in</h2>
+<%= render "shared/second-header" %>
+
+<main>
+<div class="session">
+<h2 class="session-title">ログイン</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
+ <%= render 'shared/error_messages', model: f.object %>
+
   <div class="field">
-    <%= f.label :email %><br />
+    <div class="weight-bold-text">
+        メールアドレス
+        <span class="indispensable">必須</span>
+      </div>
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
 
   <div class="field">
-    <%= f.label :password %><br />
+    <div class="weight-bold-text">
+        パスワード
+        <span class="indispensable">必須</span>
+      </div>
     <%= f.password_field :password, autocomplete: "current-password" %>
   </div>
-
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
-    </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
+  <div class="btn-contents">
+  <div class="login-btn">
+    <%= f.submit "ログイン", class:"login-red-btn"%>
+  </div>
+  <div class="registration-btn">
+    <%= link_to '新規登録', new_user_registration_path, class:"registration-gray-btn" %>
+  </div>
   </div>
 <% end %>
+</div>
+</main>
 
-<%= render "devise/shared/links" %>
+<%= render "shared/footer" %>

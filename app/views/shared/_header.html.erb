@@ -3,7 +3,7 @@
   <%= link_to "RAKUCHECK", root_path, class:"rakucheck-title" %>
     <ul class='lists'>
       <% if user_signed_in?%>
-      <li><%= link_to current_user.shop_name, edit_user_registration_path, class:'shop-name'%></li>
+      <li><%= link_to current_user.shop_name, '#', class:'shop-name'%></li>
       <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:'log-out' %><li>
       <% end %>
     </ul>
