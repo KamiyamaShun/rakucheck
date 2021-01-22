@@ -4,5 +4,9 @@ Rails.application.routes.draw do
   resources :employees do
     resources :conditions, only: [:new, :create]
   end
-  resources :conditions, only: :index
+  resources :conditions, only: :index do
+    collection do
+      get 'search'
+    end
+  end
 end
