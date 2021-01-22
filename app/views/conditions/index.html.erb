@@ -9,7 +9,9 @@
     <%= f.submit "検索", class: "search-btn" %>
   <%end%>
 
+  <div class="csv-content">
   <%= link_to "CSV出力", conditions_path(format: :csv), class: "csv-btn" %>
+  </div>
 
   <table class="condition-table">
     <tr class="table-head">

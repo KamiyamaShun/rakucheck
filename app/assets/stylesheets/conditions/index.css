@@ -54,3 +54,17 @@ table{
   border: 1px solid black;
   background-color: white;
 }
+
+.csv-content{
+  margin: 0px 0px 20px 70%;
+  display: block;
+}
+
+.csv-btn{
+  background-color: rgb(151, 150, 150);
+  padding: 10px 15px;
+  border-radius: 20px;
+  color: black;
+  cursor: pointer;
+  font-size:16px ;
+}
