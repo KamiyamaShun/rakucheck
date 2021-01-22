@@ -20,4 +20,8 @@ class Condition < ApplicationRecord
       Condition.includes(:user, :employee).order('created_at DESC')
     end
   end
+
+  def created_at_date
+    created_at.strftime('%Y/%m/%d')
+  end
 end
