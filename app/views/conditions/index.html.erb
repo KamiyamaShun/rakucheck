@@ -9,6 +9,8 @@
     <%= f.submit "検索", class: "search-btn" %>
   <%end%>
 
+  <%= link_to "CSV出力", conditions_path(format: :csv), class: "csv-btn" %>
+
   <table class="condition-table">
     <tr class="table-head">
       <th>名前</th>
