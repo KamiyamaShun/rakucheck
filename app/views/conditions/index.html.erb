@@ -4,6 +4,11 @@
   <div class="table">
   <h2 class="condition-title">従業員健康状態</h2>
 
+  <%= form_with(url: search_conditions_path, local: true, method: :get, class:"search-form") do |f| %>
+    <%= f.text_field :keyword, placeholder: "従業員を検索する", class: "search-input" %>
+    <%= f.submit "検索", class: "search-btn" %>
+  <%end%>
+
   <table class="condition-table">
     <tr class="table-head">
       <th>名前</th>
