@@ -1,33 +1,40 @@
-<h1>RAKUCHECK</h1>
+<%= render "shared/header" %>
 
-<% if user_signed_in?%>
-  <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-<% else %>
-  <%= link_to "新規登録", new_user_registration_path %>
-  <%= link_to "ログイン", new_user_session_path %>
-<% end %>
-
-<div>
-  <%= link_to "従業員を登録する",  new_employee_path %>
-</div>
-<div>
-  <%= link_to "健康状態を確認する", conditions_path %>
-</div>
-
-
-<h2>健康チェック</h2>
-<% @employees.each do |employee| %>
-  <div>
-    <%= employee.employee_number %>.<%= employee.name %>
-    <%= link_to "健康状態を記録する", new_employee_condition_path(employee.id) %>
+<main>
+<div class="report-content">
+  <h2 class="title">健康チェック</h2>
+  <div class="report-lists">
+  <% @employees.each do |employee| %>
+    <div class="report-list">
+      <div class="employee-name">
+        <%= employee.employee_number %>.<%= employee.name %>
+      </div>
+      <%= link_to "健康状態を記録する", new_employee_condition_path(employee.id), class:"check-btn" %>
+    </div>
+  <%end%>
   </div>
-<%end%>
-
-<h2>従業員リスト</h2>
-<% @employees.each do |employee| %>
-  <div>
-    <%= employee.employee_number %>.<%= employee.name %>
-    <%= link_to '編集',   edit_employee_path(employee.id )%>
-    <%= link_to '削除',  employee_path(employee.id), method: :delete %>
+  <div class="report">
+    <%= link_to "従業員の健康状態を確認する", conditions_path, class:"report-btn" %>
   </div>
-<%end%>
+</div>
+
+<div class="submit-content">
+  <h2 class="title">従業員リスト</h2>
+    <%= link_to "従業員を登録する",  new_employee_path, class:"submit-btn" %>
+  <div class="employee-lists">
+    <% @employees.each do |employee| %>
+      <div class="employee-list">
+        <div class="employee-name">
+          <%= employee.employee_number %>.<%= employee.name %>
+        </div>
+        <div class="select-btn">
+          <%= link_to '編集',   edit_employee_path(employee.id ), class:"edit-btn"%>
+          <%= link_to '削除',  employee_path(employee.id), method: :delete, class:"delete-btn" %>
+        </div>
+      </div>
+    <%end%>
+  </div>
+</div>
+</main>
+
+<%= render "shared/footer" %>

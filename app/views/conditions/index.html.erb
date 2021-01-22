@@ -1,26 +1,33 @@
-<h2>従業員健康状態</h2>
+<%= render "shared/second-header" %>
 
-<table>
-  <tr>
-    <th>名前</th>
-    <th>日付</th>
-    <th>体温</th>
-    <th>手指状態</th>
-    <th>消化器症状</th>
-    <th>その他症状</th>
-  </tr>
-  <% @conditions.each do |condition| %>
-    <tr>
-      <td><%= condition.employee.name%></td>
-      <td><%= l condition.created_at, format: :short %></td>
-      <td><%= condition.temperature%></td>
-      <td><%= condition.fingers_status.name%></td>
-      <td><%= condition.gastrointestinal_symptom.name%></td>
-      <td><%= condition.other_symptoms%></td>
+<main>
+  <div class="table">
+  <h2 class="condition-title">従業員健康状態</h2>
+
+  <table class="condition-table">
+    <tr class="table-head">
+      <th>名前</th>
+      <th>日付</th>
+      <th>体温</th>
+      <th>手指状態</th>
+      <th>消化器症状</th>
+      <th>その他症状</th>
     </tr>
-  <% end %>
-</table>
+    <% @conditions.each do |condition| %>
+      <tr class="condition-content">
+        <td><%= condition.employee.name%></td>
+        <td><%= l condition.created_at, format: :short %></td>
+        <td><%= condition.temperature%></td>
+        <td><%= condition.fingers_status.name%></td>
+        <td><%= condition.gastrointestinal_symptom.name%></td>
+        <td><%= condition.other_symptoms%></td>
+      </tr>
+    <% end %>
+  </table>
+  </div>
+</main>
 
+<%= render "shared/footer" %>
 
   
 

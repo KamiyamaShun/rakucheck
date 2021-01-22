@@ -1,19 +1,45 @@
-<%= form_with model: @condition, url: employee_conditions_path, local: true do |f| %>
-  <div class="field">
-    <%= f.label :temperature %><br />
-    <%= f.text_field :temperature %>
+<%= render "shared/second-header" %>
+
+<main>
+  <div class="form-content">
+  <%= form_with model: @condition, url: employee_conditions_path, local: true do |f| %>
+
+  <%= render 'shared/error_messages', model: f.object %>
+
+    <div class="field">
+      <div class="weight-bold-text">
+        体温
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_field :temperature, class:"form-text" %>
+    </div>
+    <div class="field">
+      <div class="weight-bold-text">
+        手指状態
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.collection_select(:fingers_status_id, FingersStatus.all, :id, :name, {},{class:"form-text"}) %>
+    </div>
+    <div class="field">
+      <div class="weight-bold-text">
+        消化器症状
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.collection_select(:gastrointestinal_symptom_id, GastrointestinalSymptom.all, :id, :name, {},{class:"form-text"}) %>
+    </div>
+    <div class="field">
+      <div class="weight-bold-text">
+        その他の症状
+        <span class="optional">任意</span>
+      </div>
+      <%= f.text_area :other_symptoms, class:"form-text", placeholder: "他に症状があれば記入してください。" %>
+    </div>
+    <div class="btn-contets">
+      <%= f.submit "記録する", class:"form-btn" %>
+      <%= link_to '戻る', root_path, class:"back-btn" %>
+    </div>
+  <%end%>
   </div>
-  <div class="field">
-    <%= f.label :fingers_status_id %><br />
-    <%= f.collection_select(:fingers_status_id, FingersStatus.all, :id, :name, {}) %>
-  </div>
-  <div class="field">
-    <%= f.label :gastrointestinal_symptom_id %><br />
-    <%= f.collection_select(:gastrointestinal_symptom_id, GastrointestinalSymptom.all, :id, :name, {}) %>
-  </div>
-  <div class="field">
-    <%= f.label :other_symptoms %><br />
-    <%= f.text_area :other_symptoms, placeholder: "他に症状があれば記入してください。" %>
-  </div>
-  <%= f.submit "記録する" %>
-<%end%>
+</main>
+
+<%= render "shared/footer" %>

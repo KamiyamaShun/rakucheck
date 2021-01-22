@@ -1,0 +1,39 @@
+.page-header{
+  width: 100vw;
+  padding: 2vh 2vw;
+  background-color: #00d0ffbf;
+}
+
+.nav{
+  font-size: 20px;
+  display: flex;
+  width: 100%;
+  padding: 1vh 0;
+  justify-content: space-between;
+}
+
+.rakucheck-title{
+  font-size: 35px;
+  text-decoration: none;
+  color: white;
+  font-weight:bold ;
+}
+
+.lists{
+  display: flex;
+  align-items: center;
+}
+
+.shop-name{
+  padding: 10px 20px;
+  text-decoration: none;
+  color: white;
+  font-weight:bold ;
+}
+
+.return{
+  padding: 10px 20px;
+  text-decoration: none;
+  color: white;
+  font-weight:bold ;
+}

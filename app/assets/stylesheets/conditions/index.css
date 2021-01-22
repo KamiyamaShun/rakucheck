@@ -1,0 +1,32 @@
+table{
+  width: 80vw;
+}
+
+.table{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.condition-title{
+  font-size: 25px;
+  font-weight: bold;
+  margin: 20px;
+}
+
+.table-head th{
+  padding: 10px 20px;
+  font-size: 22px;
+  font: bold;
+  background-color: #00d0ff4d;
+  border: 1px solid black;
+  text-align: center;
+}
+
+.condition-content td{
+  page-break-after: 10px 20px;
+  font-size: 20px;
+  text-align: center;
+  border: 1px solid black;
+  background-color: white;
+}

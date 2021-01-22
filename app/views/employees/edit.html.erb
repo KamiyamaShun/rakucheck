@@ -1,11 +1,32 @@
-<%= form_with model: @employee, local: true do |f| %>
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
+<%= render "shared/second-header" %>
+
+<main>
+  <div class="form-content">
+  <h2 class="form-title">従業員の編集</h2>
+  <%= form_with model: @employee, local: true do |f| %>
+
+  <%= render 'shared/error_messages', model: f.object %>
+
+    <div class="field">
+      <div class="weight-bold-text">
+        氏名
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_field :name, class:"form-text" %>
+    </div>
+    <div class="field">
+      <div class="weight-bold-text">
+        従業員番号
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_field :employee_number, class:"form-text" %>
+    </div>
+    <div class="btn-contents">
+    <%= f.submit "登録する", class:"form-btn" %>
+    <%= link_to 'もどる', root_path, class:"back-btn" %>
+    </div>
+  <%end%>
   </div>
-  <div class="field">
-    <%= f.label :employee_number %><br />
-    <%= f.text_field :employee_number %>
-  </div>
-  <%= f.submit "変更する" %>
-<%end%>
+</main>
+
+<%= render "shared/footer" %>

@@ -1,0 +1,11 @@
+<header class='page-header'>
+  <div class='nav'>
+  <%= link_to "RAKUCHECK", root_path, class:"rakucheck-title" %>
+    <ul class='lists'>
+      <% if user_signed_in?%>
+      <li><%= link_to "TOPに戻る", root_path, class:'return' %><li>
+      <li><%= link_to current_user.shop_name, '#', class:'shop-name'%></li>
+      <% end %>
+    </ul>
+  </div>
+</header>
