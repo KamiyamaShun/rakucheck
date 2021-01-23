@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_19_075917) do
+ActiveRecord::Schema.define(version: 2021_01_23_004956) do
 
   create_table "conditions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.float "temperature", null: false
@@ -34,6 +34,15 @@ ActiveRecord::Schema.define(version: 2021_01_19_075917) do
     t.index ["user_id"], name: "index_employees_on_user_id"
   end
 
+  create_table "sns_credentials", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "provider"
+    t.string "uid"
+    t.bigint "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_sns_credentials_on_user_id"
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "shop_name", null: false
     t.string "email", default: "", null: false
@@ -50,4 +59,5 @@ ActiveRecord::Schema.define(version: 2021_01_19_075917) do
   add_foreign_key "conditions", "employees"
   add_foreign_key "conditions", "users"
   add_foreign_key "employees", "users"
+  add_foreign_key "sns_credentials", "users"
 end

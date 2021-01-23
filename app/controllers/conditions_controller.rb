@@ -1,7 +1,7 @@
 class ConditionsController < ApplicationController
 
   def index
-    @conditions = Condition.includes(:user, :employee).order('created_at DESC')
+    @conditions = Condition.includes(:user, :employee).where("user_id = ?", current_user.id).order('created_at DESC')
   end
 
   def new

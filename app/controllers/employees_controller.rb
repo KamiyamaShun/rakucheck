@@ -3,7 +3,7 @@ class EmployeesController < ApplicationController
   before_action :set_instance, only: [:edit, :update, :destroy]
 
   def index
-    @employees = Employee.includes(:user).order('created_at ASC')
+    @employees = Employee.includes(:user).where("user_id = ?", current_user.id).order('created_at ASC')
   end
 
   def new
