@@ -70,3 +70,8 @@
   font-weight: bold;
   margin: 20px;
 }
+
+.login-flash-message {
+  text-align: center;
+  color: red;
+}

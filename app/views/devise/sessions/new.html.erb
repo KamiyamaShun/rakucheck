@@ -3,11 +3,12 @@
 <main>
 <div class="session">
 <h2 class="session-title">ログイン</h2>
+<div class='login-flash-message'>
+  <%= flash[:notice] %>
+  <%= flash[:alert] %>
+</div>
 
 <%= form_with model: @user, url: user_session_path, local: true do |f|  %>
-
- <%= render 'shared/error_messages', model: f.object %>
-
   <div class="field">
     <div class="weight-bold-text">
         メールアドレス
