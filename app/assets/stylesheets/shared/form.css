@@ -2,6 +2,7 @@
   display: flex;
   align-items: center;
   flex-direction: column;
+  padding: 5vh 10vw;
 }
 
 .form-title{
@@ -40,18 +41,12 @@
   resize: none;
 }
 
-.btn-contents{
-  display: flex;
-  align-items: center;
-  margin: 20px 0;
-}
-
 .form-btn{
   background: #ea352d;
   border: 1px solid #ea352d;
   color: #fff;
   height: 50px;
-  font-size: 14px;
+  width: 100%;
   margin-bottom: 4vh;
   border-radius: 20px;
 }
@@ -63,4 +58,6 @@
   padding: 13px 35%;
   text-decoration: none;
   border-radius: 20px;
+  display: block;
+  text-align: center;
 }

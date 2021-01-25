@@ -2,6 +2,7 @@
 
 <main>
   <div class="form-content">
+  <h2 class="form-title">健康状態の記録</h2>
   <%= form_with model: @condition, url: employee_conditions_path, local: true do |f| %>
 
   <%= render 'shared/error_messages', model: f.object %>
