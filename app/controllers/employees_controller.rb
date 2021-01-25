@@ -10,11 +10,10 @@ class EmployeesController < ApplicationController
   end
 
   def create
-    employee = Employee.new(employee_params)
-    if employee.save
+    @employee = Employee.new(employee_params)
+    if @employee.save
       redirect_to root_path
     else
-      @employee = Employee.new
       render :new
     end
   end
