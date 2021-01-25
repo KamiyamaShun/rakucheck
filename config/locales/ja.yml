@@ -3,3 +3,17 @@ ja:
     formats:
       default: "%Y/%m/%d %H:%M:%S"
       short: "%-m/%-d"
+
+  activerecord:
+    attributes:
+      user:
+        shop_name: 店舗名
+      employee:
+        name: 氏名
+        employee_number: 従業員番号
+      condition:
+        temperature: 体温
+        fingers_status_id: 手指状態
+        gastrointestinal_symptom_id: 消化器症状
+        other_symptoms: その他症状
+          
