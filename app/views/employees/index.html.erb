@@ -4,12 +4,16 @@
 <div class="report-content">
   <h2 class="title">健康チェック</h2>
   <div class="report-lists">
-  <% @employees.each do |employee| %>
+  <% @employees.zip(@today_checked) do |employee,checked| %>
     <div class="report-list">
       <div class="employee-name">
         <%= employee.employee_number %>.<%= employee.name %>
       </div>
-      <%= link_to "健康状態を記録する", new_employee_condition_path(employee.id), class:"check-btn" %>
+      <% if checked == 1 %>
+        <%= link_to "健康状態を記録する", new_employee_condition_path(employee.id), class:"check-btn" %>
+      <%else%>
+        <p class="checked">記録済み</p>
+      <%end%>
     </div>
   <%end%>
   </div>

@@ -3,11 +3,12 @@
 <main>
 <div class="session">
 <h2 class="session-title">ログイン</h2>
+<div class='login-flash-message'>
+  <%= flash[:notice] %>
+  <%= flash[:alert] %>
+</div>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-
- <%= render 'shared/error_messages', model: f.object %>
-
+<%= form_with model: @user, url: user_session_path, local: true do |f|  %>
   <div class="field">
     <div class="weight-bold-text">
         メールアドレス
@@ -24,15 +25,15 @@
     <%= f.password_field :password, autocomplete: "current-password" %>
   </div>
   <div class="btn-contents">
-  <div class="login-btn">
-    <%= f.submit "ログイン", class:"login-red-btn"%>
-  </div>
-  <div class="facebook-btn">
-    <%= link_to "Facebookでログイン", user_facebook_omniauth_authorize_path, method: :post, class:"facebook-blue-btn"%>
-  </div>
-  <div class="registration-btn">
-    <%= link_to '新規登録', new_user_registration_path, class:"registration-gray-btn" %>
-  </div>
+    <div class="login-btn">
+      <%= f.submit "ログイン", class:"login-red-btn"%>
+    </div>
+    <div class="facebook-btn">
+      <%= link_to "Facebookでログイン", user_facebook_omniauth_authorize_path, method: :post, class:"facebook-blue-btn"%>
+    </div>
+    <div class="registration-btn">
+      <%= link_to '新規登録', new_user_registration_path, class:"registration-gray-btn" %>
+    </div>
   </div>
 <% end %>
 </div>

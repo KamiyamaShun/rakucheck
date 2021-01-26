@@ -9,11 +9,10 @@ class ConditionsController < ApplicationController
   end
 
   def create
-    condition = Condition.new(condition_params)
-    if condition.save
+    @condition = Condition.new(condition_params)
+    if @condition.save
       redirect_to root_path
     else
-      @condition = Condition.new
       render :new
     end
   end
