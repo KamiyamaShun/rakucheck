@@ -3,6 +3,7 @@ class EmployeesController < ApplicationController
 
   def index
     @employees = Employee.includes(:user).where("user_id = ?", current_user.id).order('created_at ASC')
+    today_checked
   end
 
   def new
@@ -45,5 +46,24 @@ class EmployeesController < ApplicationController
 
   def set_instance
     @employee = Employee.find(params[:id])
+  end
+
+  def today_checked
+    @today_checked = []
+    today = Date.today.strftime('%Y/%m/%d')
+
+    @employees.each do |employee|
+      conditions = employee.conditions
+      isBreak = false
+        conditions.each do |condition|
+          if condition.created_at.strftime('%Y/%m/%d') == today
+            @today_checked.push(0) #今日の健康チェックがあったときは0
+            isBreak = true
+            break
+          end
+        end
+      next if isBreak
+      @today_checked.push(1) #今日の健康チェックがなかったときは1
+    end
   end
 end
