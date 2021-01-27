@@ -1,7 +1,7 @@
 <%= render "shared/second-header" %>
 
 <main>
-  <div class="table">
+  <div class="table" id="condition-table">
   <h2 class="condition-title">従業員健康状態</h2>
 
   <%= form_with(url: search_conditions_path, local: true, method: :get, class:"search-form") do |f| %>
@@ -26,9 +26,9 @@
       <tr class="condition-content">
         <td><%= condition.employee.name%></td>
         <td><%= l condition.created_at, format: :short %></td>
-        <td><%= condition.temperature%></td>
-        <td><%= condition.fingers_status.name%></td>
-        <td><%= condition.gastrointestinal_symptom.name%></td>
+        <td data-tmp=<%= condition.temperature%>><%= condition.temperature%></td>
+        <td data-fsi=<%= condition.fingers_status.id%>><%= condition.fingers_status.name%></td>
+        <td data-gsi=<%= condition.gastrointestinal_symptom.id%>><%= condition.gastrointestinal_symptom.name%></td>
         <td><%= condition.other_symptoms%></td>
       </tr>
     <% end %>
