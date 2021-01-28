@@ -16,7 +16,10 @@ https://rakucheck.herokuapp.com/
 |ID   |rakucheck |
 | --- | -------- |
 |PASS |check123  |
-## 
+## テストアカウント
+|メールアドレス |rakucheck |
+| ---------- | --------  |
+|パスワード    |check123   |
 # テーブル設計
 
 ## users テーブル
