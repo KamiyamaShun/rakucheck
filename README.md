@@ -5,9 +5,9 @@ RAKUCHECK
 中小規模の飲食店で体調管理をするためのアプリケーションです。食品業界では食中毒防止のため健康状態の記録をつけています。しかし、ほとんどの飲食店で記録が紙媒体で行われています。電子媒体で記録をすることで、健康状態の記録・確認を容易にすることが可能になります。
 
 # URL
-https://rakucheck.herokuapp.com/
 
-13.231.47.19 (Elastic IP)
+https://rakucheck.herokuapp.com/
+http://13.231.47.19 (Elastic IP)
 
 # テスト用アカウント
 
